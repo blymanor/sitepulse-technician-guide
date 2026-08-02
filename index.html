@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SitePulse — คู่มือช่าง (วันทดสอบ D-Day)</title>
+  <style>
+    :root {
+      --green: #06C755;
+      --green-dark: #049a3f;
+      --green-soft: #e8faf0;
+      --ink: #12151c;
+      --muted: #5c6570;
+      --line: #e5e9ef;
+      --bg: #f4f6f8;
+      --card: #fff;
+      --warn: #b45309;
+      --warn-bg: #fff7ed;
+      --danger: #c62828;
+      --danger-bg: #fef2f2;
+      --blue: #1565c0;
+      --blue-bg: #eff6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Sarabun", "Noto Sans Thai", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+      font-size: 16px;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 16px 64px;
+    }
+
+    .hero {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      margin-bottom: 20px;
+    }
+
+    .hero .eyebrow {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #7dffa8;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, .72);
+      font-size: 15px;
+      max-width: 40em;
+    }
+
+    .hero .roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .pill.you {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .pill.other {
+      background: rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .85);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      margin-bottom: 28px;
+    }
+
+    .flow-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 6px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .flow-item .n {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      margin: 0 auto 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      background: #eef2f6;
+      color: var(--muted);
+    }
+
+    .flow-item.you {
+      border-color: rgba(6, 199, 85, .45);
+      background: var(--green-soft);
+    }
+
+    .flow-item.you .n {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .flow-item .who {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .owner-board {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .owner-card {
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+    }
+
+    .owner-card.tech {
+      background: var(--green-soft);
+      border-color: rgba(6, 199, 85, .35);
+    }
+
+    .owner-card.others {
+      background: #fff;
+    }
+
+    .owner-card h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .owner-card.tech h3 {
+      color: var(--green-dark);
+    }
+
+    .owner-card ul {
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .owner-card li {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(18, 21, 28, .06);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .owner-card li:last-child {
+      border-bottom: 0;
+    }
+
+    .owner-card .tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      background: var(--green);
+      border-radius: 6px;
+      padding: 2px 7px;
+      height: fit-content;
+      text-align: center;
+    }
+
+    .owner-card.others .tag {
+      background: #64748b;
+    }
+
+    .owner-card .tag.bot {
+      background: #0ea5e9;
+    }
+
+    .owner-card .tag.rpm {
+      background: #7c3aed;
+    }
+
+    .owner-card .tag.mgmt {
+      background: #334155;
+    }
+
+    .owner-card .who-line {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .end-tech {
+      background: linear-gradient(90deg, var(--green-soft), #fff);
+      border: 2px solid var(--green);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 8px 0 20px;
+      text-align: center;
+    }
+
+    .end-tech strong {
+      display: block;
+      font-size: 16px;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+
+    .end-tech span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .handoff {
+      margin-top: 8px;
+      margin-bottom: 20px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px dashed #94a3b8;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .owner-board {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+    }
+
+    .step-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .step-num.you {
+      background: var(--green);
+    }
+
+    .step-num.wait {
+      background: #64748b;
+    }
+
+    .step-num.bot {
+      background: #0ea5e9;
+    }
+
+    .step-num.rpm {
+      background: #7c3aed;
+    }
+
+    .step-num.mgmt {
+      background: #334155;
+    }
+
+    .step-head h2 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .step-head .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .badge.you {
+      background: var(--green-soft);
+      color: var(--green-dark);
+    }
+
+    .badge.wait {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    ol.howto {
+      margin: 0 0 16px 1.2em;
+      font-size: 15px;
+    }
+
+    ol.howto li {
+      margin: 6px 0;
+    }
+
+    ol.howto b {
+      font-weight: 700;
+    }
+
+    .tip,
+    .okbox,
+    .errbox,
+    .infobox {
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .tip {
+      background: var(--warn-bg);
+      border: 1px solid #fed7aa;
+      color: var(--warn);
+    }
+
+    .tip strong,
+    .okbox strong,
+    .errbox strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .okbox {
+      background: var(--green-soft);
+      border: 1px solid rgba(6, 199, 85, .3);
+      color: var(--green-dark);
+    }
+
+    .errbox {
+      background: var(--danger-bg);
+      border: 1px solid #fecaca;
+      color: var(--danger);
+    }
+
+    .infobox {
+      background: var(--blue-bg);
+      border: 1px solid #bfdbfe;
+      color: var(--blue);
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .shot {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #0f1014;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shot.wide {
+      grid-column: 1 / -1;
+      max-width: 420px;
+    }
+
+    .shot.desk {
+      grid-column: 1 / -1;
+      max-width: 100%;
+    }
+
+    .shot.desk img {
+      max-height: 420px;
+      object-fit: contain;
+      background: #f8fafc;
+    }
+
+    .shot img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      max-height: 520px;
+      background: #0f1014;
+    }
+
+    .shot .cap {
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .shot .cap small {
+      display: block;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .substep {
+      margin-top: 16px;
+    }
+
+    .substep h3 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .substep h3 span {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 640px) {
+      .flow {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 22px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .wrap {
+        max-width: none;
+        padding: 0;
+      }
+
+      .step {
+        break-inside: avoid;
+      }
+
+      .shot img {
+        max-height: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="eyebrow">SitePulse · คู่มือช่าง</div>
+      <h1>วันทดสอบ (D-Day) ลำดับ 4–10</h1>
+      <p><b style="color:#7dffa8">งานของช่างจบที่ขั้น 8 (Check-Out)</b> — ใช้แค่ LINE · ขั้น 5 / 7 / 9 / 10
+        เป็นของคนอื่นหรือระบบ</p>
+      <div class="roles">
+        <span class="pill you">เขียว = ช่างทำเอง (4, 6, 8)</span>
+        <span class="pill other">อื่น = Admin / บอท / RPM / ผู้บริหาร</span>
+      </div>
+    </header>
+
+    <div class="owner-board">
+      <div class="owner-card tech">
+        <h3>● ช่างทำเอง (ถึงขั้นนี้พอ)</h3>
+        <ul>
+          <li><span class="tag">4</span>
+            <div>ลงทะเบียนผ่าน LINE<div class="who-line">พิมพ์ข้อมูล → รออนุมัติ</div>
+            </div>
+          </li>
+          <li><span class="tag">6</span>
+            <div>Check-In<div class="who-line">เลือกงาน · GPS ในรัศมี · % · รูป</div>
+            </div>
+          </li>
+          <li><span class="tag">8</span>
+            <div>Check-Out ← จบงานช่างที่นี่<div class="who-line">GPS · % จริง · ยืนยันออกงาน · ถ้าถูกส่งคืนค่อย
+                Check-In ใหม่</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="owner-card others">
+        <h3>○ ที่เหลือ — ไม่ใช่ช่าง</h3>
+        <ul>
+          <li><span class="tag">5</span>
+            <div>อนุมัติช่าง + ผูกบริษัท<div class="who-line">Admin ML / Super Admin (เว็บ)</div>
+            </div>
+          </li>
+          <li><span class="tag bot">7</span>
+            <div>แจ้งกลุ่ม + อัปเดต %<div class="who-line">ระบบ / บอท อัตโนมัติ</div>
+            </div>
+          </li>
+          <li><span class="tag rpm">9</span>
+            <div>Verify อนุมัติ / ส่งคืน<div class="who-line">RPM (เว็บ)</div>
+            </div>
+          </li>
+          <li><span class="tag mgmt">10</span>
+            <div>Dashboard / รายงาน<div class="who-line">CBM / ผู้บริหาร (เว็บ)</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="flow" aria-label="ลำดับงาน">
+      <div class="flow-item you">
+        <div class="n">4</div>ลงทะเบียน<span class="who">ช่าง</span>
+      </div>
+      <div class="flow-item">
+        <div class="n">5</div>อนุมัติ<span class="who">Admin</span>
+      </div>
+      <div class="flow-item you">
+        <div class="n">6</div>Check-In<span class="who">ช่าง</span>
+      </div>
+      <div class="flow-item">
+        <div class="n">7</div>แจ้งกลุ่ม<span class="who">บอท</span>
+      </div>
+      <div class="flow-item you">
+        <div class="n">8</div>Check-Out<span class="who">ช่าง · จบ</span>
+      </div>
+      <div class="flow-item">
+        <div class="n">9</div>Verify<span class="who">RPM</span>
+      </div>
+      <div class="flow-item">
+        <div class="n">10</div>รายงาน<span class="who">ผู้บริหาร</span>
+      </div>
+    </nav>
+
+    <!-- เมนู Rich Menu -->
+    <section class="step">
+      <div class="step-head">
+        <div class="step-num you">≡</div>
+        <div>
+          <h2>เริ่มจากเมนูด้านล่าง LINE <span class="badge you">ช่าง</span></h2>
+          <div class="meta">Rich Menu ของบอท SitePulse</div>
+        </div>
+      </div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044958_0.jpg" alt="Rich Menu SitePulse">
+          <figcaption class="cap">เมนูด้านล่าง<small>Check-In · Check-Out · ลงทะเบียนผู้ใช้</small></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="step" id="s4">
+      <div class="step-head">
+        <div class="step-num you">4</div>
+        <div>
+          <h2>ลงทะเบียนผ่าน LINE <span class="badge you">ช่างทำ</span></h2>
+          <div class="meta">กด Register หรือพิมพ์ “ลงทะเบียน”</div>
+        </div>
+      </div>
+      <ol class="howto">
+        <li>พิมพ์ <b>ชื่อ–นามสกุล</b></li>
+        <li>พิมพ์ <b>Email</b></li>
+        <li>พิมพ์ <b>เบอร์โทร 10 หลัก</b> (หรือ <b>-</b> เพื่อข้าม)</li>
+        <li>ได้การ์ด <b>ลงทะเบียนสำเร็จ</b> — รอ Admin อนุมัติ</li>
+      </ol>
+      <div class="shots">
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044959_0.jpg" alt="ลงทะเบียน">
+          <figcaption class="cap">กรอกชื่อ / Email / เบอร์<small>จบด้วยการ์ดรออนุมัติ</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044960_0.jpg" alt="สำเร็จและอนุมัติ">
+          <figcaption class="cap">ลงทะเบียนสำเร็จ → อนุมัติแล้ว<small>การ์ดเขียวสองใบ</small></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="step" id="s5">
+      <div class="step-head">
+        <div class="step-num wait">5</div>
+        <div>
+          <h2>อนุมัติช่าง + ผูกบริษัท <span class="badge wait">ของ Admin · ช่างรออย่างเดียว</span></h2>
+          <div class="meta">เมื่ออนุมัติแล้ว กด “เปิดเมนู” หรือพิมพ์ เมนู</div>
+        </div>
+      </div>
+      <div class="infobox">ช่างไม่ต้องทำอะไรในเว็บ — รอการ์ด ✅ อนุมัติแล้ว แล้วเริ่ม Check-In ได้</div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044961_0.jpg" alt="อนุมัติแล้ว + เมนู">
+          <figcaption class="cap">อนุมัติแล้ว + เมนู Check-In / Out<small>กด Check-In สีเขียว</small></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="step" id="s6">
+      <div class="step-head">
+        <div class="step-num you">6</div>
+        <div>
+          <h2>Check-In <span class="badge you">ช่างทำ</span></h2>
+          <div class="meta">อยู่ในรัศมีไซต์ ≤ 100 ม. · เปิด GPS · อนุญาตตำแหน่ง</div>
+        </div>
+      </div>
+
+      <div class="substep">
+        <h3><span>A</span> เลือกงาน → เปิดหน้า Check-In</h3>
+        <ol class="howto">
+          <li>กด <b>Check-In</b> จากเมนู</li>
+          <li>เลือกการ์ดงาน (เช่น สำรวจหน้างาน TSS)</li>
+          <li>กด <b>เปิด Check-In</b> (ลิงก์ใช้ได้ 1 ชม.)</li>
+        </ol>
+        <div class="shots">
+          <figure class="shot">
+            <img src="technician-guide-shots/S__50044962_0.jpg" alt="เลือกไซต์">
+            <figcaption class="cap">เลือกไซต์ / Milestone<small>กด 📷 Check-In บนการ์ดงาน</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/S__50044963_0.jpg" alt="เปิด Check-In">
+            <figcaption class="cap">เปิด Check-In<small>กดปุ่มเขียว “เปิด Check-In”</small></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="substep">
+        <h3><span>B</span> อนุญาตตำแหน่ง + ได้ GPS</h3>
+        <div class="tip"><strong>ต้องกด Allow</strong> เมื่อระบบขอใช้ตำแหน่ง — ไม่กดจะ Check-In ไม่ได้</div>
+        <div class="shots">
+          <figure class="shot">
+            <img src="technician-guide-shots/S__50044964_0.jpg" alt="Allow location">
+            <figcaption class="cap">อนุญาตตำแหน่ง<small>กด Allow</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/S__50044965_0.jpg" alt="ได้ตำแหน่งแล้ว">
+            <figcaption class="cap">ได้ตำแหน่งแล้ว ✓<small>ขั้น 2 เขียว — ยังต้องเลือก % + รูป</small></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="substep">
+        <h3><span>C</span> เลือก % + ถ่ายรูปหน้างาน</h3>
+        <div class="tip">
+          <strong>แนะนำถ่าย (อย่างน้อย 1 รูป)</strong>
+          หน้าไซต์ · เครื่องมือ · เครื่องจักร/อุปกรณ์ · ชุด PPE
+        </div>
+        <div class="shots">
+          <figure class="shot">
+            <img src="technician-guide-shots/add-97-ci-form.jpg" alt="ฟอร์ม Check-In">
+            <figcaption class="cap">ฟอร์ม Check-In<small>ยังขาด % + รูป → ปุ่มยืนยันยังกดไม่ได้</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/S__50044977_0.jpg" alt="ถ่ายรูป">
+            <figcaption class="cap">รูปหน้างาน<small>ถ่ายรูป หรือเลือกจากคลัง</small></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="substep">
+        <h3><span>D</span> ในรัศมี ✓ / นอก ✗</h3>
+        <div class="okbox">✓ <b>ในรัศมี ≤ 100 ม.</b> → Check-In สำเร็จ · Geofence แสดง “ผ่าน”</div>
+        <div class="errbox">✗ <b>นอกรัศมี</b> → ไม่ผ่าน · ระบบบอกระยะห่าง · เดินเข้าใกล้แล้วลองใหม่</div>
+        <div class="shots">
+          <figure class="shot">
+            <img src="technician-guide-shots/S__50044966_0.jpg" alt="นอกรัศมี">
+            <figcaption class="cap">นอกรัศมี ✗<small>ตัวอย่าง: ห่าง 1,126 ม. (จำกัด 100 ม.)</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/S__50044967_0.jpg" alt="Check-In สำเร็จ">
+            <figcaption class="cap">Check-In สำเร็จ ✓<small>ปัดลงกลับแชทบอท</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/add-98-detail-ci-geofence-pass.jpg" alt="Geofence ผ่าน">
+            <figcaption class="cap">รายละเอียด · Geofence ผ่าน ✓<small>ตัวอย่าง: ผ่าน · 85 ม. (ในรัศมี 100 ม.)</small>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="substep">
+        <h3><span>!</span> ลิงก์หมดอายุ</h3>
+        <div class="tip"><strong>ลิงก์ Check-In / Out ใช้ได้ 1 ชั่วโมง</strong> ถ้าหมดอายุ → กลับแชท · พิมพ์ เมนู หรือกด
+          Check-In ใหม่ · เปิดลิงก์ใหม่ภายใน 1 ชม.</div>
+        <div class="shots">
+          <figure class="shot">
+            <img src="technician-guide-shots/add-96-link-expired.jpg" alt="ลิงก์หมดอายุ">
+            <figcaption class="cap">ลิงก์ใช้ไม่ได้แล้ว<small>ขอลิงก์ใหม่จากบอท</small></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="step" id="s7">
+      <div class="step-head">
+        <div class="step-num bot">7</div>
+        <div>
+          <h2>แจ้งเตือนกลุ่ม + อัปเดต % <span class="badge wait">ของระบบ/บอท · ช่างไม่กดอะไร</span></h2>
+          <div class="meta">บอทโพสต์ในกลุ่ม LINE ของไซต์</div>
+        </div>
+      </div>
+      <div class="infobox">ช่างไม่ต้องกดอะไรเพิ่ม — ดูในกลุ่มว่ามี ✅ Check-In · 🔔 งานครบแล้ว · 🔚 Check-Out</div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044973_0.jpg" alt="แจ้งกลุ่ม CI/CO">
+          <figcaption class="cap">Check-In + Check-Out ในกลุ่ม<small>พร้อมระยะเวลาทำงาน</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/add-50001-ci-waiting-rpm.jpg" alt="งานครบรอ RPM">
+          <figcaption class="cap">งานครบแล้ว · รอ RPM<small>บอทแจ้งอัตโนมัติหลังปิดงาน</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/add-50000-job-done-waiting-rpm.jpg" alt="Check-Out 100%">
+          <figcaption class="cap">Check-Out 100% + รอ Verify<small>ระบบส่งต่อให้ RPM</small></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="step" id="s8">
+      <div class="step-head">
+        <div class="step-num you">8</div>
+        <div>
+          <h2>Check-Out <span class="badge you">ช่างทำ · จบงานช่างที่นี่</span></h2>
+          <div class="meta">เลิกงาน / จบช่วงงาน — ระบบคำนวณชั่วโมง</div>
+        </div>
+      </div>
+      <ol class="howto">
+        <li>กด <b>Check-Out</b> / พิมพ์ <b>ออกงาน</b> → กด <b>เปิด Check-Out</b></li>
+        <li>ยืนยันว่าเป็นงานที่ Check-In อยู่ + ดึง GPS</li>
+        <li>เลือก <b>% ความคืบหน้าจริง</b></li>
+        <li>แนบรูป/เอกสารได้ (ไม่บังคับ ยกเว้นปิดงาน 100%)</li>
+        <li>กด <b>ยืนยัน Check-Out</b> (ปุ่มแดง)</li>
+      </ol>
+      <div class="tip"><strong>มี Check-In ค้าง</strong> ต้อง Check-Out ก่อนจึงจะ Check-In งานใหม่ได้</div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="technician-guide-shots/add-94-open-ci-co-return.jpg" alt="เปิด Check-Out">
+          <figcaption class="cap">เปิด Check-Out<small>การ์ดส้ม · ใช้ได้ 1 ชม.</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044969_0.jpg" alt="Check-Out GPS">
+          <figcaption class="cap">งานที่ Check-In + GPS<small>กดยืนยันเมื่อพร้อม</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044970_0.jpg" alt="Check-Out %">
+          <figcaption class="cap">% จริง + รูป (ไม่บังคับ)<small>100% = ปิดงาน ต้องแนบครบ</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044971_0.jpg" alt="แนบไฟล์ Check-Out">
+          <figcaption class="cap">แนบรูป / PDF แล้ว<small>พร้อมกดยืนยัน Check-Out</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/S__50044972_0.jpg" alt="Check-Out สำเร็จ">
+          <figcaption class="cap">Check-Out สำเร็จ ✓<small>แสดง % และเวลา</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/add-99-detail-co-geofence-pass.jpg" alt="รายละเอียด Check-Out">
+          <figcaption class="cap">รายละเอียด · Geofence ผ่าน ✓<small>ตัวอย่าง: ผ่าน · 84 ม. + ไฟล์ TSS</small>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="end-tech">
+      <strong>✓ งานของช่างจบที่ขั้น 8 (Check-Out สำเร็จ)</strong>
+      <span>หลังจากนี้ช่างไม่ต้องเข้าเว็บ · ยกเว้นได้รับ “RPM ส่งคืนงาน” ถึงค่อย Check-In ใหม่แก้ตามเหตุผล</span>
+    </div>
+    <div class="handoff">ด้านล่างนี้ = คนอื่นทำ (ช่างอ่านเพื่อเข้าใจภาพรวมเท่านั้น)</div>
+
+    <!-- 9 -->
+    <section class="step" id="s9">
+      <div class="step-head">
+        <div class="step-num rpm">9</div>
+        <div>
+          <h2>Verify — อนุมัติ / ส่งคืน <span class="badge wait">ของ RPM · ไม่ใช่ช่าง</span></h2>
+          <div class="meta">RPM ตรวจบนเว็บ SitePulse → อนุมัติ หรือ ส่งคืน</div>
+        </div>
+      </div>
+      <div class="infobox">
+        <b>เจ้าของขั้น:</b> RPM (เว็บ)<br>
+        ช่างไม่เข้าหน้า Verify · ถ้าถูกส่งคืน จะได้รับการ์ดแดงใน LINE → Check-In ใหม่เพื่อแก้ แล้วส่ง Verify อีกครั้ง
+      </div>
+      <div class="shots">
+        <figure class="shot desk">
+          <img src="technician-guide-shots/web-verify-waiting.png" alt="รอ Verify">
+          <figcaption class="cap">RPM · หน้ารอ Verify<small>ดูรูป/PDF แล้วกด อนุมัติ หรือ ส่งคืน</small></figcaption>
+        </figure>
+        <figure class="shot desk">
+          <img src="technician-guide-shots/web-verify-returned.png" alt="งานที่ส่งคืน">
+          <figcaption class="cap">RPM · ส่งคืนแล้ว<small>สถานะ “งานที่ส่งคืน” + หมายเหตุเหตุผล</small></figcaption>
+        </figure>
+        <figure class="shot desk">
+          <img src="technician-guide-shots/web-checkin-detail.png" alt="รายละเอียด Check-In บนเว็บ">
+          <figcaption class="cap">รายละเอียด Check-In บนเว็บ<small>Geofence / GPS / รูป — RPM หรือ Admin ดูได้</small>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/add-95-group-co-return.jpg" alt="RPM ส่งคืนใน LINE">
+          <figcaption class="cap">ช่างเห็นใน LINE: RPM ส่งคืนงาน<small>มีเหตุผล → ให้ Check-In ใหม่แก้</small>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="step" id="s10">
+      <div class="step-head">
+        <div class="step-num mgmt">10</div>
+        <div>
+          <h2>ดู Dashboard / รายงาน <span class="badge wait">ของ CBM / ผู้บริหาร · ไม่ใช่ช่าง</span></h2>
+          <div class="meta">ดู Exclusive Summary / Gantt / ความคืบหน้าบนเว็บ</div>
+        </div>
+      </div>
+      <div class="infobox">
+        <b>เจ้าของขั้น:</b> CBM / ผู้บริหาร (ทีมที่ดูระบบได้)<br>
+        ช่างไม่ต้องเข้าเว็บรายงาน — ข้อมูลมาจาก Check-In/Out ที่ทำไปแล้ว<br>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      SitePulse · คู่มือช่าง D-Day ลำดับ 4–10<br>
+      GitHub Pages · พิมพ์เป็น PDF ได้จากเบราว์เซอร์
+    </p>
+  </div>
+</body>
+
+</html>
