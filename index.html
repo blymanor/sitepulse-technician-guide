@@ -530,10 +530,10 @@
       <div class="eyebrow">SitePulse · คู่มือช่าง</div>
       <h1>วันทดสอบ (D-Day) ลำดับ 4–10</h1>
       <p><b style="color:#7dffa8">งานของช่างจบที่ขั้น 8 (Check-Out)</b> — ใช้แค่ LINE · ขั้น 5 / 7 / 9 / 10
-        เป็นของคนอื่นหรือระบบ</p>
+        เป็นของคนอื่นหรือระบบ · Verify เป็น <b style="color:#c4b5fd">Inspector → RPM</b></p>
       <div class="roles">
         <span class="pill you">เขียว = ช่างทำเอง (4, 6, 8)</span>
-        <span class="pill other">อื่น = Admin / บอท / RPM / ผู้บริหาร</span>
+        <span class="pill other">อื่น = Admin / บอท / Inspector / RPM / ผู้บริหาร</span>
       </div>
     </header>
 
@@ -542,15 +542,15 @@
         <h3>● ช่างทำเอง (ถึงขั้นนี้พอ)</h3>
         <ul>
           <li><span class="tag">4</span>
-            <div>ลงทะเบียนผ่าน LINE<div class="who-line">พิมพ์ข้อมูล → รออนุมัติ</div>
+            <div>ลงทะเบียนผ่าน LINE<div class="who-line">ชื่อ · Email · เบอร์ · เลือก ML → รออนุมัติ</div>
             </div>
           </li>
           <li><span class="tag">6</span>
-            <div>Check-In<div class="who-line">เลือกงาน · GPS ในรัศมี · % · รูป</div>
+            <div>Check-In<div class="who-line">เลือกงาน · แนะนำเปิดนอก LINE · GPS · % · รูป</div>
             </div>
           </li>
           <li><span class="tag">8</span>
-            <div>Check-Out ← จบงานช่างที่นี่<div class="who-line">GPS · % จริง · ยืนยันออกงาน · ถ้าถูกส่งคืนค่อย
+            <div>Check-Out ← จบงานช่างที่นี่<div class="who-line">GPS · % จริง · เอกสารปิดงาน · ถ้าถูกส่งคืนค่อย
                 Check-In ใหม่</div>
             </div>
           </li>
@@ -560,7 +560,7 @@
         <h3>○ ที่เหลือ — ไม่ใช่ช่าง</h3>
         <ul>
           <li><span class="tag">5</span>
-            <div>อนุมัติช่าง + ผูกบริษัท<div class="who-line">Admin ML / Super Admin (เว็บ)</div>
+            <div>อนุมัติช่าง + ผูกบอทกลุ่ม / ไซต์<div class="who-line">Admin ML / Super Admin (เว็บ + LINE กลุ่ม)</div>
             </div>
           </li>
           <li><span class="tag bot">7</span>
@@ -568,7 +568,7 @@
             </div>
           </li>
           <li><span class="tag rpm">9</span>
-            <div>Verify อนุมัติ / ส่งคืน<div class="who-line">RPM (เว็บ)</div>
+            <div>Verify อนุมัติ / ส่งคืน<div class="who-line">Inspector ขั้น 1 → RPM ขั้นสุดท้าย (เว็บ)</div>
             </div>
           </li>
           <li><span class="tag mgmt">10</span>
@@ -596,7 +596,7 @@
         <div class="n">8</div>Check-Out<span class="who">ช่าง · จบ</span>
       </div>
       <div class="flow-item">
-        <div class="n">9</div>Verify<span class="who">RPM</span>
+        <div class="n">9</div>Verify<span class="who">Inspector→RPM</span>
       </div>
       <div class="flow-item">
         <div class="n">10</div>รายงาน<span class="who">ผู้บริหาร</span>
@@ -614,7 +614,7 @@
       </div>
       <div class="shots">
         <figure class="shot">
-          <img src="technician-guide-shots/S__50044958_0.jpg" alt="Rich Menu SitePulse">
+          <img src="technician-guide-shots/rich-menu.jpg" alt="Rich Menu SitePulse">
           <figcaption class="cap">เมนูด้านล่าง<small>Check-In · Check-Out · ลงทะเบียนผู้ใช้</small></figcaption>
         </figure>
       </div>
@@ -633,16 +633,21 @@
         <li>พิมพ์ <b>ชื่อ–นามสกุล</b></li>
         <li>พิมพ์ <b>Email</b></li>
         <li>พิมพ์ <b>เบอร์โทร 10 หลัก</b> (หรือ <b>-</b> เพื่อข้าม)</li>
+        <li>เลือก <b>ภูมิภาค / ML</b> (กดปุ่ม 1–6 หรือพิมพ์เลข)</li>
         <li>ได้การ์ด <b>ลงทะเบียนสำเร็จ</b> — รอ Admin อนุมัติ</li>
       </ol>
       <div class="shots">
         <figure class="shot">
-          <img src="technician-guide-shots/S__50044959_0.jpg" alt="ลงทะเบียน">
-          <figcaption class="cap">กรอกชื่อ / Email / เบอร์<small>จบด้วยการ์ดรออนุมัติ</small></figcaption>
+          <img src="technician-guide-shots/reg-fill-and-ml.jpg" alt="กรอกข้อมูล + เลือก ML">
+          <figcaption class="cap">กรอกชื่อ / Email / เบอร์<small>จากนั้นเลือกภูมิภาค / ML</small></figcaption>
         </figure>
         <figure class="shot">
-          <img src="technician-guide-shots/S__50044960_0.jpg" alt="สำเร็จและอนุมัติ">
-          <figcaption class="cap">ลงทะเบียนสำเร็จ → อนุมัติแล้ว<small>การ์ดเขียวสองใบ</small></figcaption>
+          <img src="technician-guide-shots/reg-success.jpg" alt="ลงทะเบียนสำเร็จ">
+          <figcaption class="cap">ลงทะเบียนสำเร็จ<small>แสดง ML ที่เลือก · รอ Admin อนุมัติ</small></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="technician-guide-shots/approved-open-menu.jpg" alt="อนุมัติแล้ว">
+          <figcaption class="cap">อนุมัติแล้ว → เปิดเมนู<small>กดปุ่มเขียว “เปิดเมนู”</small></figcaption>
         </figure>
       </div>
     </section>
@@ -652,15 +657,50 @@
       <div class="step-head">
         <div class="step-num wait">5</div>
         <div>
-          <h2>อนุมัติช่าง + ผูกบริษัท <span class="badge wait">ของ Admin · ช่างรออย่างเดียว</span></h2>
+          <h2>อนุมัติช่าง + ผูกบอทกลุ่ม <span class="badge wait">ของ Admin · ช่างรออย่างเดียว</span></h2>
           <div class="meta">เมื่ออนุมัติแล้ว กด “เปิดเมนู” หรือพิมพ์ เมนู</div>
         </div>
       </div>
       <div class="infobox">ช่างไม่ต้องทำอะไรในเว็บ — รอการ์ด ✅ อนุมัติแล้ว แล้วเริ่ม Check-In ได้</div>
+      <div class="substep">
+        <h3><span>A</span> Admin อนุมัติช่างบนเว็บ</h3>
+        <div class="shots">
+          <figure class="shot desk">
+            <img src="technician-guide-shots/web-technicians.png" alt="หน้าช่างบนเว็บ">
+            <figcaption class="cap">Admin · หน้าช่าง/ผรม.<small>อนุมัติบัญชีที่ลงทะเบียนจาก LINE</small></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="substep">
+        <h3><span>B</span> Admin ดึงบอทเข้ากลุ่ม + ผูกไซต์ (สำหรับแจ้งกลุ่ม)</h3>
+        <ol class="howto">
+          <li>เชิญ <b>Bot SitePulse</b> เข้ากลุ่ม LINE ของไซต์</li>
+          <li>กด <b>เปิดเมนูกลุ่ม</b> → <b>เพิ่มไซต์งาน</b></li>
+          <li>พิมพ์รหัสผู้รับเหมา (เช่น CON-DEMO) → กดเพิ่มไซต์</li>
+        </ol>
+        <div class="shots">
+          <figure class="shot">
+            <img src="technician-guide-shots/admin-choose-bot.jpg" alt="เลือก Bot SitePulse">
+            <figcaption class="cap">เชิญบอทเข้ากลุ่ม<small>ค้นหา Bot SitePulse</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/admin-group-menu.jpg" alt="เมนูกลุ่ม">
+            <figcaption class="cap">เมนูกลุ่ม<small>เพิ่ม / ลบ / ดูรายการไซต์</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/admin-add-site-code.jpg" alt="ใส่รหัสผู้รับเหมา">
+            <figcaption class="cap">ใส่รหัสผู้รับเหมา<small>แล้วเลือกไซต์จากรายการ</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/admin-site-linked.jpg" alt="ผูกไซต์สำเร็จ">
+            <figcaption class="cap">เพิ่มไซต์สำเร็จ<small>กลุ่มพร้อมรับแจ้ง Check-In/Out</small></figcaption>
+          </figure>
+        </div>
+      </div>
       <div class="shots">
         <figure class="shot">
-          <img src="technician-guide-shots/S__50044961_0.jpg" alt="อนุมัติแล้ว + เมนู">
-          <figcaption class="cap">อนุมัติแล้ว + เมนู Check-In / Out<small>กด Check-In สีเขียว</small></figcaption>
+          <img src="technician-guide-shots/select-site-milestone.jpg" alt="เมนู Check-In หลังอนุมัติ">
+          <figcaption class="cap">ช่างเห็นหลังอนุมัติ<small>Check-In / Out + เลือกไซต์ / งาน</small></figcaption>
         </figure>
       </div>
     </section>
@@ -671,7 +711,7 @@
         <div class="step-num you">6</div>
         <div>
           <h2>Check-In <span class="badge you">ช่างทำ</span></h2>
-          <div class="meta">อยู่ในรัศมีไซต์ ≤ 100 ม. · เปิด GPS · อนุญาตตำแหน่ง</div>
+          <div class="meta">อยู่ในรัศมีไซต์ ≤ 100 ม. · เปิด GPS · อนุญาตตำแหน่ง / กล้อง</div>
         </div>
       </div>
 
@@ -679,70 +719,66 @@
         <h3><span>A</span> เลือกงาน → เปิดหน้า Check-In</h3>
         <ol class="howto">
           <li>กด <b>Check-In</b> จากเมนู</li>
-          <li>เลือกการ์ดงาน (เช่น สำรวจหน้างาน TSS)</li>
+          <li>เลือกไซต์ → เลือกการ์ดงาน (เช่น สำรวจหน้างาน TSS)</li>
           <li>กด <b>เปิด Check-In</b> (ลิงก์ใช้ได้ 1 ชม.)</li>
         </ol>
         <div class="shots">
           <figure class="shot">
-            <img src="technician-guide-shots/S__50044962_0.jpg" alt="เลือกไซต์">
-            <figcaption class="cap">เลือกไซต์ / Milestone<small>กด 📷 Check-In บนการ์ดงาน</small></figcaption>
+            <img src="technician-guide-shots/select-site-milestone.jpg" alt="เลือกไซต์ / งาน">
+            <figcaption class="cap">เลือกไซต์ / Milestone<small>กด 📸 Check-In บนการ์ดงาน</small></figcaption>
           </figure>
           <figure class="shot">
-            <img src="technician-guide-shots/S__50044963_0.jpg" alt="เปิด Check-In">
+            <img src="technician-guide-shots/open-checkin.jpg" alt="เปิด Check-In">
             <figcaption class="cap">เปิด Check-In<small>กดปุ่มเขียว “เปิด Check-In”</small></figcaption>
           </figure>
         </div>
       </div>
 
       <div class="substep">
-        <h3><span>B</span> อนุญาตตำแหน่ง + ได้ GPS</h3>
-        <div class="tip"><strong>ต้องกด Allow</strong> เมื่อระบบขอใช้ตำแหน่ง — ไม่กดจะ Check-In ไม่ได้</div>
+        <h3><span>B</span> แนะนำเปิดนอก LINE (GPS / กล้องเสถียรกว่า)</h3>
+        <div class="tip"><strong>แนะนำเปิดในเบราว์เซอร์นอก LINE</strong> — กด “เปิดในเบราว์เซอร์” จะได้ GPS และกล้องที่เสถียรกว่า ·
+          หรือกด “ดำเนินการต่อใน LINE” ได้ถ้าจำเป็น</div>
         <div class="shots">
           <figure class="shot">
-            <img src="technician-guide-shots/S__50044964_0.jpg" alt="Allow location">
-            <figcaption class="cap">อนุญาตตำแหน่ง<small>กด Allow</small></figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="technician-guide-shots/S__50044965_0.jpg" alt="ได้ตำแหน่งแล้ว">
-            <figcaption class="cap">ได้ตำแหน่งแล้ว ✓<small>ขั้น 2 เขียว — ยังต้องเลือก % + รูป</small></figcaption>
+            <img src="technician-guide-shots/open-outside-line.jpg" alt="เปิดนอก LINE">
+            <figcaption class="cap">แนะนำเปิดนอก LINE<small>เปิดในเบราว์เซอร์ หรือดำเนินการต่อใน LINE</small>
+            </figcaption>
           </figure>
         </div>
       </div>
 
       <div class="substep">
-        <h3><span>C</span> เลือก % + ถ่ายรูปหน้างาน</h3>
+        <h3><span>C</span> ได้ตำแหน่ง + เลือก % + ถ่ายรูป</h3>
         <div class="tip">
-          <strong>แนะนำถ่าย (อย่างน้อย 1 รูป)</strong>
-          หน้าไซต์ · เครื่องมือ · เครื่องจักร/อุปกรณ์ · ชุด PPE
+          <strong>ต้องกด Allow</strong> เมื่อขอตำแหน่ง / กล้อง — แนะนำถ่ายอย่างน้อย 1 รูป
+          (หน้าไซต์ · เครื่องมือ · เครื่องจักร · PPE)
         </div>
         <div class="shots">
           <figure class="shot">
-            <img src="technician-guide-shots/add-97-ci-form.jpg" alt="ฟอร์ม Check-In">
-            <figcaption class="cap">ฟอร์ม Check-In<small>ยังขาด % + รูป → ปุ่มยืนยันยังกดไม่ได้</small></figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="technician-guide-shots/S__50044977_0.jpg" alt="ถ่ายรูป">
-            <figcaption class="cap">รูปหน้างาน<small>ถ่ายรูป หรือเลือกจากคลัง</small></figcaption>
+            <img src="technician-guide-shots/ci-form-camera.jpg" alt="ฟอร์ม Check-In + กล้อง">
+            <figcaption class="cap">ฟอร์ม Check-In<small>เลือก % · Allow กล้อง · ยังขาดรูป → ยืนยันยังกดไม่ได้</small>
+            </figcaption>
           </figure>
         </div>
       </div>
 
       <div class="substep">
         <h3><span>D</span> ในรัศมี ✓ / นอก ✗</h3>
-        <div class="okbox">✓ <b>ในรัศมี ≤ 100 ม.</b> → Check-In สำเร็จ · Geofence แสดง “ผ่าน”</div>
+        <div class="okbox">✓ <b>ในรัศมี ≤ 100 ม.</b> → Check-In สำเร็จ · แสดงระยะห่าง + % เป้าหมาย</div>
         <div class="errbox">✗ <b>นอกรัศมี</b> → ไม่ผ่าน · ระบบบอกระยะห่าง · เดินเข้าใกล้แล้วลองใหม่</div>
         <div class="shots">
           <figure class="shot">
             <img src="technician-guide-shots/S__50044966_0.jpg" alt="นอกรัศมี">
-            <figcaption class="cap">นอกรัศมี ✗<small>ตัวอย่าง: ห่าง 1,126 ม. (จำกัด 100 ม.)</small></figcaption>
+            <figcaption class="cap">นอกรัศมี ✗<small>ตัวอย่าง: ห่างเกินรัศมี 100 ม.</small></figcaption>
           </figure>
           <figure class="shot">
-            <img src="technician-guide-shots/S__50044967_0.jpg" alt="Check-In สำเร็จ">
-            <figcaption class="cap">Check-In สำเร็จ ✓<small>ปัดลงกลับแชทบอท</small></figcaption>
+            <img src="technician-guide-shots/ci-success.jpg" alt="Check-In สำเร็จ">
+            <figcaption class="cap">Check-In สำเร็จ ✓<small>กด Check-In ต่อ หรือ Check-Out เมื่อเลิกงาน</small>
+            </figcaption>
           </figure>
           <figure class="shot">
             <img src="technician-guide-shots/add-98-detail-ci-geofence-pass.jpg" alt="Geofence ผ่าน">
-            <figcaption class="cap">รายละเอียด · Geofence ผ่าน ✓<small>ตัวอย่าง: ผ่าน · 85 ม. (ในรัศมี 100 ม.)</small>
+            <figcaption class="cap">รายละเอียด · Geofence ผ่าน ✓<small>ตัวอย่าง: ผ่าน · ในรัศมี 100 ม.</small>
             </figcaption>
           </figure>
         </div>
@@ -767,22 +803,16 @@
         <div class="step-num bot">7</div>
         <div>
           <h2>แจ้งเตือนกลุ่ม + อัปเดต % <span class="badge wait">ของระบบ/บอท · ช่างไม่กดอะไร</span></h2>
-          <div class="meta">บอทโพสต์ในกลุ่ม LINE ของไซต์</div>
+          <div class="meta">บอทโพสต์ในกลุ่ม LINE ของไซต์ (หลัง Admin ผูกไซต์แล้ว)</div>
         </div>
       </div>
-      <div class="infobox">ช่างไม่ต้องกดอะไรเพิ่ม — ดูในกลุ่มว่ามี ✅ Check-In · 🔔 งานครบแล้ว · 🔚 Check-Out</div>
+      <div class="infobox">ช่างไม่ต้องกดอะไรเพิ่ม — หลัง Check-Out 100% จะเห็นการ์ด
+        <b>งานครบแล้ว · รอ Inspector แล้ว RPM Verify</b></div>
       <div class="shots">
         <figure class="shot">
-          <img src="technician-guide-shots/S__50044973_0.jpg" alt="แจ้งกลุ่ม CI/CO">
-          <figcaption class="cap">Check-In + Check-Out ในกลุ่ม<small>พร้อมระยะเวลาทำงาน</small></figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="technician-guide-shots/add-50001-ci-waiting-rpm.jpg" alt="งานครบรอ RPM">
-          <figcaption class="cap">งานครบแล้ว · รอ RPM<small>บอทแจ้งอัตโนมัติหลังปิดงาน</small></figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="technician-guide-shots/add-50000-job-done-waiting-rpm.jpg" alt="Check-Out 100%">
-          <figcaption class="cap">Check-Out 100% + รอ Verify<small>ระบบส่งต่อให้ RPM</small></figcaption>
+          <img src="technician-guide-shots/co-success-waiting-verify.jpg" alt="งานครบรอ Verify">
+          <figcaption class="cap">Check-Out สำเร็จ + งานครบแล้ว<small>รอ Inspector → แล้ว RPM Verify</small>
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -800,34 +830,23 @@
         <li>กด <b>Check-Out</b> / พิมพ์ <b>ออกงาน</b> → กด <b>เปิด Check-Out</b></li>
         <li>ยืนยันว่าเป็นงานที่ Check-In อยู่ + ดึง GPS</li>
         <li>เลือก <b>% ความคืบหน้าจริง</b></li>
-        <li>แนบรูป/เอกสารได้ (ไม่บังคับ ยกเว้นปิดงาน 100%)</li>
+        <li>แนบรูปหน้างานได้ (ไม่บังคับ) · ถ้าปิดงาน <b>100%</b> ต้องแนบเอกสารครบ (เช่น แบบฟอร์ม TSS)</li>
         <li>กด <b>ยืนยัน Check-Out</b> (ปุ่มแดง)</li>
       </ol>
       <div class="tip"><strong>มี Check-In ค้าง</strong> ต้อง Check-Out ก่อนจึงจะ Check-In งานใหม่ได้</div>
       <div class="shots">
         <figure class="shot">
-          <img src="technician-guide-shots/add-94-open-ci-co-return.jpg" alt="เปิด Check-Out">
-          <figcaption class="cap">เปิด Check-Out<small>การ์ดส้ม · ใช้ได้ 1 ชม.</small></figcaption>
+          <img src="technician-guide-shots/co-success-waiting-verify.jpg" alt="เปิด Check-Out + สำเร็จ">
+          <figcaption class="cap">เปิด Check-Out → สำเร็จ ✓<small>แสดงระยะเวลา · GPS ผ่าน · รอ Verify</small>
+          </figcaption>
         </figure>
         <figure class="shot">
-          <img src="technician-guide-shots/S__50044969_0.jpg" alt="Check-Out GPS">
-          <figcaption class="cap">งานที่ Check-In + GPS<small>กดยืนยันเมื่อพร้อม</small></figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="technician-guide-shots/S__50044970_0.jpg" alt="Check-Out %">
-          <figcaption class="cap">% จริง + รูป (ไม่บังคับ)<small>100% = ปิดงาน ต้องแนบครบ</small></figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="technician-guide-shots/S__50044971_0.jpg" alt="แนบไฟล์ Check-Out">
-          <figcaption class="cap">แนบรูป / PDF แล้ว<small>พร้อมกดยืนยัน Check-Out</small></figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="technician-guide-shots/S__50044972_0.jpg" alt="Check-Out สำเร็จ">
-          <figcaption class="cap">Check-Out สำเร็จ ✓<small>แสดง % และเวลา</small></figcaption>
+          <img src="technician-guide-shots/co-form-docs.jpg" alt="ฟอร์ม Check-Out + เอกสาร">
+          <figcaption class="cap">% จริง + เอกสารปิดงาน<small>100% = ต้องแนบครบก่อนยืนยัน</small></figcaption>
         </figure>
         <figure class="shot">
           <img src="technician-guide-shots/add-99-detail-co-geofence-pass.jpg" alt="รายละเอียด Check-Out">
-          <figcaption class="cap">รายละเอียด · Geofence ผ่าน ✓<small>ตัวอย่าง: ผ่าน · 84 ม. + ไฟล์ TSS</small>
+          <figcaption class="cap">รายละเอียด · Geofence ผ่าน ✓<small>ตัวอย่างบนเว็บ / รายละเอียดงาน</small>
           </figcaption>
         </figure>
       </div>
@@ -835,7 +854,7 @@
 
     <div class="end-tech">
       <strong>✓ งานของช่างจบที่ขั้น 8 (Check-Out สำเร็จ)</strong>
-      <span>หลังจากนี้ช่างไม่ต้องเข้าเว็บ · ยกเว้นได้รับ “RPM ส่งคืนงาน” ถึงค่อย Check-In ใหม่แก้ตามเหตุผล</span>
+      <span>หลังจากนี้ช่างไม่ต้องเข้าเว็บ · ยกเว้นได้รับ “ส่งคืนงาน” ถึงค่อย Check-In ใหม่แก้ตามเหตุผล</span>
     </div>
     <div class="handoff">ด้านล่างนี้ = คนอื่นทำ (ช่างอ่านเพื่อเข้าใจภาพรวมเท่านั้น)</div>
 
@@ -844,31 +863,37 @@
       <div class="step-head">
         <div class="step-num rpm">9</div>
         <div>
-          <h2>Verify — อนุมัติ / ส่งคืน <span class="badge wait">ของ RPM · ไม่ใช่ช่าง</span></h2>
-          <div class="meta">RPM ตรวจบนเว็บ SitePulse → อนุมัติ หรือ ส่งคืน</div>
+          <h2>Verify — Inspector → RPM <span class="badge wait">ไม่ใช่ช่าง</span></h2>
+          <div class="meta">Dual approve บนเว็บ · Inspector ขั้น 1 → RPM ขั้นสุดท้าย · ส่งคืนทำโดย Inspector (หรือ Admin)</div>
         </div>
       </div>
       <div class="infobox">
-        <b>เจ้าของขั้น:</b> RPM (เว็บ)<br>
-        ช่างไม่เข้าหน้า Verify · ถ้าถูกส่งคืน จะได้รับการ์ดแดงใน LINE → Check-In ใหม่เพื่อแก้ แล้วส่ง Verify อีกครั้ง
+        <b>เจ้าของขั้น:</b> Inspector แล้วตามด้วย RPM (เว็บ)<br>
+        ช่างไม่เข้าหน้า Verify · ถ้าถูกส่งคืน จะได้รับการ์ดใน LINE → Check-In ใหม่เพื่อแก้ แล้วส่ง Verify อีกครั้ง<br>
+        เหตุผลส่งคืน: <b>รูปไม่ถูก/ไม่ครบ</b> หรือ <b>ติดตั้งผิด</b>
       </div>
       <div class="shots">
         <figure class="shot desk">
           <img src="technician-guide-shots/web-verify-waiting.png" alt="รอ Verify">
-          <figcaption class="cap">RPM · หน้ารอ Verify<small>ดูรูป/PDF แล้วกด อนุมัติ หรือ ส่งคืน</small></figcaption>
+          <figcaption class="cap">หน้ารอ Verify<small>สถานะ “รอ Inspector อนุมัติ” ก่อน RPM</small></figcaption>
         </figure>
         <figure class="shot desk">
-          <img src="technician-guide-shots/web-verify-returned.png" alt="งานที่ส่งคืน">
-          <figcaption class="cap">RPM · ส่งคืนแล้ว<small>สถานะ “งานที่ส่งคืน” + หมายเหตุเหตุผล</small></figcaption>
+          <img src="technician-guide-shots/web-verify-detail.png" alt="รายละเอียดรอ Verify">
+          <figcaption class="cap">รายละเอียดงาน + รูป/PDF<small>ดู Check-In/Out แล้วกด อนุมัติ หรือ ส่งคืน</small>
+          </figcaption>
         </figure>
         <figure class="shot desk">
-          <img src="technician-guide-shots/web-checkin-detail.png" alt="รายละเอียด Check-In บนเว็บ">
-          <figcaption class="cap">รายละเอียด Check-In บนเว็บ<small>Geofence / GPS / รูป — RPM หรือ Admin ดูได้</small>
+          <img src="technician-guide-shots/web-verify-approve-modal.png" alt="อนุมัติ Milestone">
+          <figcaption class="cap">ยืนยันอนุมัติ<small>Admin อาจ bypass Inspector+RPM ได้</small></figcaption>
+        </figure>
+        <figure class="shot desk">
+          <img src="technician-guide-shots/web-verify-return-modal.png" alt="ส่งคืน Milestone">
+          <figcaption class="cap">ส่งคืน + เลือกเหตุผล<small>รูปไม่ครบ / ติดตั้งผิด + รายละเอียดเพิ่มเติม</small>
           </figcaption>
         </figure>
         <figure class="shot">
-          <img src="technician-guide-shots/add-95-group-co-return.jpg" alt="RPM ส่งคืนใน LINE">
-          <figcaption class="cap">ช่างเห็นใน LINE: RPM ส่งคืนงาน<small>มีเหตุผล → ให้ Check-In ใหม่แก้</small>
+          <img src="technician-guide-shots/add-95-group-co-return.jpg" alt="ส่งคืนใน LINE">
+          <figcaption class="cap">ช่างเห็นใน LINE: ส่งคืนงาน<small>มีเหตุผล → ให้ Check-In ใหม่แก้</small>
           </figcaption>
         </figure>
       </div>
@@ -891,7 +916,7 @@
 
     <p class="footer-note">
       SitePulse · คู่มือช่าง D-Day ลำดับ 4–10<br>
-      GitHub Pages · พิมพ์เป็น PDF ได้จากเบราว์เซอร์
+      เปิดไฟล์: <code>docs/technician-guide-dday.html</code> · พิมพ์เป็น PDF ได้จากเบราว์เซอร์
     </p>
   </div>
 </body>
