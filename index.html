@@ -529,11 +529,11 @@
     <header class="hero">
       <div class="eyebrow">SitePulse · คู่มือช่าง</div>
       <h1>วันทดสอบ (D-Day) ลำดับ 4–10</h1>
-      <p><b style="color:#7dffa8">งานของช่างจบที่ขั้น 8 (ออกงาน)</b> — ใช้แค่ LINE · ขั้น 5 / 7 / 9 / 10
+      <p><b style="color:#7dffa8">งานของช่างจบที่ขั้น 8 (ออกงาน)</b> — ใช้ LINE และหน้า LIFF · ขั้น 5 / 9 / 10
         เป็นของคนอื่นหรือระบบ · ตรวจงานเป็น <b style="color:#c4b5fd">Inspector → RPM</b>
         (เข้าคิวตรวจเมื่อปิดงาน 100% เท่านั้น)</p>
       <div class="roles">
-        <span class="pill you">เขียว = ช่างทำเอง (4, 6, 8)</span>
+        <span class="pill you">เขียว = ช่างทำเอง (4, 6, 7, 8)</span>
         <span class="pill other">อื่น = Admin / บอท / Inspector / RPM / ผู้บริหาร</span>
       </div>
     </header>
@@ -550,6 +550,10 @@
             <div>เข้างาน (Check-In)<div class="who-line">เลือกไซต์ · ติ๊กงาน · เปิดนอก LINE ได้ · ตำแหน่ง · % · รูปครบ 3 รูป</div>
             </div>
           </li>
+          <li><span class="tag">7</span>
+            <div>ดูผลใน LIFF / ดูประวัติ<div class="who-line">เห็นผลสำเร็จในหน้า LIFF · กลับแชทกดดูประวัติได้</div>
+            </div>
+          </li>
           <li><span class="tag">8</span>
             <div>ออกงาน (Check-Out) ← จบงานช่างที่นี่<div class="who-line">% ตามจริงได้ · ปิด 100% ต้องแนบครบ · ถูกส่งคืนค่อยเข้างานใหม่</div>
             </div>
@@ -561,10 +565,6 @@
         <ul>
           <li><span class="tag">5</span>
             <div>สร้างกลุ่ม Hub · ผูกไซต์ · อนุมัติช่าง<div class="who-line">Admin สร้างกลุ่ม+ลากบอท+ติ๊กไซต์ · Admin อนุมัติ (ระบบผูกทีมตามไซต์ที่ช่างเลือก) · ช่างเข้ากลุ่ม Hub</div>
-            </div>
-          </li>
-          <li><span class="tag bot">7</span>
-            <div>แจ้งกลุ่ม + แชทช่าง<div class="who-line">บอทส่ง Check-In/Out ทั้งกลุ่ม Hub และ LINE ส่วนตัวช่าง</div>
             </div>
           </li>
           <li><span class="tag rpm">9</span>
@@ -589,8 +589,8 @@
       <div class="flow-item you">
         <div class="n">6</div>Check-In<span class="who">ช่าง</span>
       </div>
-      <div class="flow-item">
-        <div class="n">7</div>แจ้งกลุ่ม+ช่าง<span class="who">บอท</span>
+      <div class="flow-item you">
+        <div class="n">7</div>ผล / ประวัติ<span class="who">ช่าง · LIFF</span>
       </div>
       <div class="flow-item you">
         <div class="n">8</div>Check-Out<span class="who">ช่าง · จบ</span>
@@ -683,26 +683,32 @@
           <li>สร้าง <b>กลุ่ม LINE</b> สำหรับ Hub / ไซต์นั้น</li>
           <li>ลากหรือเชิญ <b>Bot SitePulse</b> เข้ากลุ่ม</li>
           <li>ในกลุ่ม พิมพ์ <b>เมนู</b> → กด <b>เปิดหน้าจัดการไซต์</b> (บอทส่งลิงก์)</li>
-          <li>ในหน้าเว็บ: กรองผู้รับเหมา/ทีมได้ → <b>ติ๊กไซต์</b> ที่ต้องการ → กด <b>บันทึก</b></li>
+          <li>หน้า <b>จัดการไซต์ในกลุ่ม</b>: ค้นหาด้วยรหัส / ชื่อไซต์ / ลูกค้า หรือกรองผู้รับเหมา → ทีม → ลูกค้า</li>
+          <li><b>ติ๊กไซต์ที่จะเพิ่ม</b> ได้หลายไซต์ · คงติ๊กไซต์เดิมที่ยังต้องการไว้ → กด <b>บันทึก</b> ครั้งเดียว</li>
+          <li>เห็นหน้า <b>บันทึกแล้ว</b> พร้อมจำนวนไซต์รวม → กลับกลุ่ม LINE เพื่อตรวจข้อความ <b>บันทึกไซต์ในกลุ่มแล้ว</b> ซึ่งแสดงไซต์ที่เพิ่มและไซต์ในกลุ่มตอนนี้</li>
           <li>ถ้าต้องการลบไซต์ออกจากกลุ่ม: เข้าหน้าจัดการไซต์อีกครั้ง → <b>เอาติ๊กออก</b> → กด <b>บันทึก</b></li>
         </ol>
-        <div class="infobox">ผูกไซต์ทำผ่านหน้าลิงก์ (ติ๊กแล้วบันทึก) — <b>ไม่ต้องพิมพ์รหัสผู้รับเหมาหาบอท</b> · กรองตามผู้รับเหมาในหน้านั้นได้</div>
+        <div class="infobox">ผูกไซต์ทำผ่านหน้าลิงก์ (ติ๊กแล้วบันทึก) — <b>ไม่ต้องพิมพ์รหัสผู้รับเหมาหาบอท</b> · เลือกหลายไซต์ได้ หรือใช้ปุ่ม <b>เลือกทั้งหมดในทีมนี้ / เลือกทั้งลูกค้า</b> · ตรวจรายการที่เลือกก่อนบันทึก</div>
         <div class="shots">
           <figure class="shot">
             <img src="technician-guide-shots/admin-choose-bot.jpg" alt="เลือก Bot SitePulse">
             <figcaption class="cap">ลาก/เชิญบอทเข้ากลุ่ม<small>ค้นหา Bot SitePulse</small></figcaption>
           </figure>
           <figure class="shot">
-            <img src="technician-guide-shots/admin-group-menu.jpg" alt="เมนูกลุ่ม / ลิงก์จัดการไซต์">
-            <figcaption class="cap">เมนูในกลุ่ม<small>กด “เปิดหน้าจัดการไซต์”</small></figcaption>
+            <img src="technician-guide-shots/admin-group-menu.jpg" alt="พิมพ์เมนูในกลุ่ม LINE เพื่อเปิดหน้าจัดการไซต์">
+            <figcaption class="cap">1 · เปิดจากกลุ่ม LINE<small>พิมพ์ “เมนู” → กด “เปิดหน้าจัดการไซต์”</small></figcaption>
           </figure>
           <figure class="shot">
-            <img src="technician-guide-shots/admin-group-liff-selected.jpg" alt="ติ๊กหลายไซต์">
-            <figcaption class="cap">หน้าจัดการไซต์<small>กรองได้ · ติ๊กแล้วบันทึก = ผูก · เอาติ๊กออกแล้วบันทึก = ลบ</small></figcaption>
+            <img src="technician-guide-shots/admin-group-liff-selected.jpg" alt="หน้าจัดการไซต์ในกลุ่ม พร้อมค้นหาและตัวกรองผู้รับเหมา ทีม ลูกค้า">
+            <figcaption class="cap">2 · ค้นหาและติ๊กไซต์<small>เลือกได้หลายไซต์ · คงไซต์เดิมที่ต้องการไว้ · เพิ่มไซต์แล้วกด “บันทึก”</small></figcaption>
           </figure>
           <figure class="shot">
-            <img src="technician-guide-shots/line-bot-group-sites-saved.jpg" alt="บอทยืนยันในกลุ่ม">
-            <figcaption class="cap">บอทยืนยันในกลุ่ม<small>รายการไซต์ที่ผูกแล้ว</small></figcaption>
+            <img src="technician-guide-shots/admin-group-liff-save-success.jpg" alt="หน้าบันทึกแล้ว รวม 2 ไซต์ในกลุ่ม">
+            <figcaption class="cap">3 · บันทึกสำเร็จในหน้าเว็บ<small>แสดงจำนวนไซต์รวมในกลุ่ม · ตัวอย่างรวม 2 ไซต์</small></figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="technician-guide-shots/line-bot-group-sites-saved.jpg" alt="บอทแจ้งบันทึกไซต์ในกลุ่มแล้ว พร้อมไซต์ที่เพิ่มและรายการไซต์ปัจจุบัน">
+            <figcaption class="cap">4 · ตรวจผลในกลุ่ม LINE<small>บอทแจ้งไซต์ที่เพิ่ม พร้อมรายการ “ไซต์ในกลุ่มตอนนี้”</small></figcaption>
           </figure>
         </div>
       </div>
@@ -731,13 +737,13 @@
         <ol class="howto">
           <li>หลังอนุมัติแล้ว ช่างต้อง <b>เข้ากลุ่ม LINE ของ Hub / ไซต์</b> ที่จะทำงาน</li>
           <li>ในกลุ่มจะเห็นบอทส่งรายละเอียดงาน (Check-In / Check-Out)</li>
-          <li>บอทส่ง <b>ทั้งในกลุ่ม Hub และแชทส่วนตัวของช่าง</b> (ตอนเข้างาน/ออกงาน)</li>
+          <li>ผล Check-In / Check-Out ของช่างแสดงใน <b>หน้า LIFF</b> ทันที · กลับแชทแล้วกด <b>ดูประวัติ</b> เพื่อตรวจย้อนหลังได้</li>
         </ol>
         <div class="tip"><strong>หมายเหตุตรวจงาน:</strong> ตอน Inspector/RPM ตรวจหรือส่งคืน — ระบบแจ้ง <b>แชทส่วนตัว (DM)</b> เป็นหลัก ไม่โพสต์เข้ากลุ่ม</div>
         <div class="shots">
           <figure class="shot">
-            <img src="technician-guide-shots/hub-checkin-checkout-cards.jpg" alt="การ์ดในกลุ่ม/แชทช่าง">
-            <figcaption class="cap">การ์ด CHECK-OUT สำเร็จ<small>แจ้งในกลุ่ม Hub และแชทส่วนตัวช่าง</small></figcaption>
+            <img src="technician-guide-shots/hub-checkin-checkout-cards.jpg" alt="การ์ดแจ้ง Check-Out ในกลุ่ม Hub">
+            <figcaption class="cap">การแจ้ง Check-Out ในกลุ่ม Hub<small>ผลของช่างดูใน LIFF และประวัติ</small></figcaption>
           </figure>
           <figure class="shot">
             <img src="technician-guide-shots/hub-checkin-card.jpg" alt="การ์ด CHECK-IN ในกลุ่ม Hub">
@@ -827,6 +833,10 @@
             </figcaption>
           </figure>
           <figure class="shot">
+            <img src="technician-guide-shots/ci-photo-source.jpg" alt="เลือกวิธีแนบรูป Check-In ถ่ายรูปหรือเลือกจากคลัง">
+            <figcaption class="cap">กดช่องรูปเพื่อแนบ<small>ถ่ายรูป หรือเลือกจากคลัง · รูปต้องตรงรายการและมี Timestamp</small></figcaption>
+          </figure>
+          <figure class="shot">
             <img src="technician-guide-shots/ci-photo-stamp.jpg" alt="รูปที่ประทับเวลา พิกัด ที่อยู่">
             <figcaption class="cap">รูปมีตราประทับ<small>เวลา · พิกัด · ที่อยู่ · ระยะจากไซต์</small></figcaption>
           </figure>
@@ -835,7 +845,7 @@
 
       <div class="substep">
         <h3><span>D</span> ในรัศมี ✓ / นอก ✗</h3>
-        <div class="okbox">✓ <b>อยู่ในรัศมีของไซต์ (ไม่เกิน 200 ม.)</b> → เข้างานสำเร็จ · เห็นหน้า “Check-In สำเร็จ” พร้อมเลขอ้างอิง · กลุ่มไซต์ได้รับการแจ้ง</div>
+        <div class="okbox">✓ <b>อยู่ในรัศมีของไซต์ (ไม่เกิน 200 ม.)</b> → เห็นหน้า <b>“Check-In สำเร็จ” ใน LIFF</b> พร้อมจำนวนรายการ ไซต์ งาน และเวลาเช็คอิน · บันทึกเข้างานเรียบร้อยแล้ว</div>
         <div class="errbox">✗ <b>อยู่นอกพื้นที่</b> → ไม่ผ่าน · ระบบบอกระยะห่าง · เดินเข้าใกล้แล้วลองใหม่</div>
         <div class="shots">
           <figure class="shot">
@@ -844,7 +854,7 @@
           </figure>
           <figure class="shot">
             <img src="technician-guide-shots/ci-success.jpg" alt="Check-In สำเร็จ">
-            <figcaption class="cap">Check-In สำเร็จ ✓<small>กด Check-In ต่อ หรือ Check-Out เมื่อเลิกงาน</small>
+            <figcaption class="cap">Check-In สำเร็จใน LIFF ✓<small>ตรวจไซต์ · งาน · เวลา · กลับแชทเพื่อกดดูประวัติ</small>
             </figcaption>
           </figure>
         </div>
@@ -867,15 +877,26 @@
     <!-- 7 -->
     <section class="step" id="s7">
       <div class="step-head">
-        <div class="step-num bot">7</div>
+        <div class="step-num you">7</div>
         <div>
-          <h2>แจ้งเตือนกลุ่ม + แชทช่าง <span class="badge wait">ของระบบ/บอท · ช่างไม่กดอะไร</span></h2>
-          <div class="meta">หลัง Admin ผูกไซต์แล้ว — บอทส่ง Check-In/Out ทั้งกลุ่ม Hub และ LINE ส่วนตัวช่าง</div>
+          <h2>ดูผลใน LIFF และดูประวัติ <span class="badge you">ช่างตรวจผลได้เอง</span></h2>
+          <div class="meta">ใช้ได้ทั้ง Check-In และ Check-Out · ผลสำเร็จแสดงในหน้าที่ทำรายการ</div>
         </div>
       </div>
-      <div class="infobox">ช่างไม่ต้องกดอะไรเพิ่ม — ดูรายละเอียดใน <b>กลุ่ม Hub</b> และ/หรือ <b>แชทส่วนตัว</b><br>
-        หลังออกงานที่ <b>100%</b> จะเห็นการ์ด <b>งานครบแล้ว · รอ Inspector แล้ว RPM</b><br>
-        ถ้า % ยังไม่ถึง 100 แค่บันทึกความคืบหน้า <b>ไม่เข้าคิวตรวจ</b> · ตอนตรวจ/ส่งคืนแจ้ง DM เป็นหลัก</div>
+      <ol class="howto">
+        <li>หลังส่งรายการ ให้ดูหน้า <b>Check-In สำเร็จ</b> หรือ <b>Check-Out สำเร็จ</b> ใน LIFF พร้อมรายละเอียดรายการที่บันทึก</li>
+        <li>กลับแชทบอท → กด <b>Check-In</b> หรือ <b>Check-Out</b> จากเมนู → กด <b>ดูประวัติเช็คอิน / ดูประวัติเช็คเอ้า</b> ในการ์ด (บางการ์ดใช้ชื่อ <b>ดูประวัติ</b>)</li>
+        <li>หน้า <b>สถานะและประวัติ</b> แสดงทั้ง <b>ยังไม่เช็คเอ้า</b> และ <b>ประวัติที่ผ่านมา</b> · เลือกวันนี้ / ทุกวัน หรือกรองวันที่และไซต์ได้</li>
+      </ol>
+      <div class="okbox"><strong>เห็นผลสำเร็จใน LIFF = บันทึกแล้ว</strong>ไม่ต้องส่งข้อความยืนยันหรือรอข้อความสำเร็จในแชทส่วนตัว · หากไม่แน่ใจว่าบันทึกแล้วหรือยัง ให้ตรวจที่ <b>ดูประวัติ</b></div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="technician-guide-shots/work-status-history.jpg" alt="หน้าสถานะและประวัติ พร้อมตัวกรองวันที่ ไซต์ และรายการยังไม่เช็คเอ้า">
+          <figcaption class="cap">สถานะและประวัติ<small>เลือกวัน / ไซต์ · ตรวจเวลาเข้างาน · กด “เช็คเอ้ารายการนี้” สำหรับงานที่ยังค้างได้</small></figcaption>
+        </figure>
+      </div>
+      <div class="infobox">บอทยังแจ้ง Check-In / Check-Out ใน <b>กลุ่ม Hub ที่ผูกไซต์</b> แยกจากผลใน LIFF ของช่าง<br>
+        ออกงานที่ <b>100%</b> และแนบหลักฐานครบ → เข้าคิว <b>Inspector → RPM</b> · ถ้ายังไม่ถึง 100% เป็นการบันทึกความคืบหน้า <b>ไม่เข้าคิวตรวจ</b></div>
     </section>
 
     <!-- 8 -->
@@ -893,6 +914,7 @@
         <li>เลือก <b>% ความคืบหน้าจริง</b> (ไม่จำเป็นต้องเป็น 100% ทุกวัน)</li>
         <li>แนบรูปได้ตามต้องการ · ถ้าปิดงาน <b>100%</b> ต้องแนบรูป/เอกสารครบตามรายการงาน</li>
         <li>กด <b>ยืนยัน Check-Out</b></li>
+        <li>ตรวจผล <b>Check-Out สำเร็จ</b> ใน LIFF · ดูจำนวนที่ออกงานแล้วและรายการที่ยังค้าง · เปิด <b>ดูประวัติ</b> จากแชทเพื่อตรวจย้อนหลังได้</li>
       </ol>
       <div class="tip"><strong>มีเข้างานค้าง</strong> ต้องออกงานก่อนถึงจะเข้างานใหม่ได้ · ถ้าค้างที่ไซต์อื่น จะเข้างานไซต์ใหม่ไม่ได้</div>
       <div class="shots">
@@ -905,6 +927,10 @@
           <figcaption class="cap">หน้ารายการงานค้าง<small>อัปเดตทีละงานได้</small></figcaption>
         </figure>
         <figure class="shot">
+          <img src="technician-guide-shots/co-actual-progress.jpg" alt="เลือกความคืบหน้าจริงก่อน Check-Out โดยปิดงาน 100 เปอร์เซ็นต์ต้องแนบเอกสารครบ">
+          <figcaption class="cap">เลือกความคืบหน้าจริง<small>ตัวอย่างเลือก 100% · ยังขาดเอกสาร → ปุ่มบันทึกยังใช้ไม่ได้</small></figcaption>
+        </figure>
+        <figure class="shot">
           <img src="technician-guide-shots/co-hub-ready.jpg" alt="ฟอร์ม Check-Out พร้อมยืนยัน">
           <figcaption class="cap">ยืนยันตำแหน่ง → ยืนยัน Check-Out<small>ระบบบันทึกตำแหน่ง · ไม่บล็อกรัศมี</small></figcaption>
         </figure>
@@ -914,11 +940,7 @@
         </figure>
         <figure class="shot">
           <img src="technician-guide-shots/co-success.jpg" alt="Check-Out สำเร็จ">
-          <figcaption class="cap">ออกงานสำเร็จ ✓<small>ระบบบันทึกชั่วโมง/ความคืบหน้า</small></figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="technician-guide-shots/co-success-waiting-verify.jpg" alt="งานครบรอ Verify">
-          <figcaption class="cap">ถ้า 100% → รอตรวจ<small>Inspector แล้วตามด้วย RPM</small></figcaption>
+          <figcaption class="cap">ออกงานสำเร็จใน LIFF ✓<small>ตรวจผลแล้วดูย้อนหลังได้จากประวัติ · 100% พร้อมหลักฐานครบ → รอ Inspector แล้ว RPM</small></figcaption>
         </figure>
       </div>
     </section>
